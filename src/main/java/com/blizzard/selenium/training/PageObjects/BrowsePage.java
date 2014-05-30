@@ -1,5 +1,10 @@
 package com.blizzard.selenium.training.PageObjects;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
+
 /**
  *
  * Summary: Using this type of java class is very useful to breakdown clutter in code.
@@ -10,4 +15,12 @@ package com.blizzard.selenium.training.PageObjects;
  */
 
 public class BrowsePage {
+	@FindBy(css="ul.product-card-container.thumbnails li:nth-child(1) a")
+	private WebElement wodlink;
+	
+	public WebElement getwodlink() {
+		return wodlink;
+		
+	}
+	
 }

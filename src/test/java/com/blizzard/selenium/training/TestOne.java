@@ -1,29 +1,36 @@
 package com.blizzard.selenium.training;
 
-import com.blizzard.selenium.training.PageObjects.BrowsePage;
-import com.blizzard.selenium.training.PageObjects.HomePage;
+
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
 
-/**
- * 
- */
+import com.blizzard.selenium.training.BusinessObjects.Shop;
+
 public class TestOne {
-
-    private WebDriver driver;
-    private BrowsePage browsePage;
-    private HomePage homePage;
-
-    public TestOne(final WebDriver driver) {
-        this.driver = new FirefoxDriver();
-        PageFactory.initElements(driver, browsePage);
-        PageFactory.initElements(driver, homePage);
-    }
+	WebDriver driver = new FirefoxDriver();
+	Shop shop = new Shop(driver);
+	
+    
 
     @Test
     public void testStuff(){
+    	Assert.assertTrue(shop.verifyStandardPrice());
+    }
+    
+    @Test
+    public void testStuff2() {
+    	Assert.assertFalse(shop.verifyStandardPrice());
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
         // perform some sort of test
         // Use Assert.assertTrue(Expression) to verify true/false results.
     }

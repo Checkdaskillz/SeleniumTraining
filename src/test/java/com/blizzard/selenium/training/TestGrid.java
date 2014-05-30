@@ -1,6 +1,7 @@
 package com.blizzard.selenium.training;
 
 import org.junit.Test;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -29,6 +30,7 @@ public class TestGrid {
     @Test // Test Internet Explorer
     public void testIE() throws Exception {
         DesiredCapabilities browser = DesiredCapabilities.internetExplorer();
+        browser.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
         openAndClose(browser);
     }
 
